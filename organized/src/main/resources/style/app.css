@@ -1,0 +1,130 @@
+.appBackgroundLight {
+    -fx-background-color: white;
+}
+.appBackgroundDark {
+    -fx-background-color: #262626;
+}
+.textFieldDark {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8px;
+    -fx-border-color: white;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: white;
+    -fx-text-inner-size: 14px;
+}
+.textFieldDarkAccepted {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8px;
+    -fx-border-color: green;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: white;
+    -fx-text-inner-size: 14px;
+}
+.textFieldDarkRejected {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8px;
+    -fx-border-color: red;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: white;
+    -fx-text-inner-size: 14px;
+}
+.textFieldLight {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: black;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: black;
+    -fx-text-inner-size: 14px;
+}
+.textFieldLightAccepted {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: green;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: black;
+    -fx-text-inner-size: 14px;
+}
+.textFieldLightRejected {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: red;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-inner-color: black;
+    -fx-text-inner-size: 14px;
+}
+.buttonDark {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8px;
+    -fx-border-color: white;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-padding: 0.25em 0.75em;
+    -fx-min-width: 10px;
+    -fx-min-height: 10px;
+    -fx-text-alignment: center;
+    -fx-line-height: 1.1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-translate-y: 3;
+}
+.buttonDark:hover{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-text-fill: black;
+}
+.buttonDark:armed{
+    -fx-translate-y: -4;
+    -fx-translate-y: 4;
+}
+.buttonLight {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: black;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-padding: 0.25em 0.75em;
+    -fx-min-width: 10px;
+    -fx-min-height: 10px;
+    -fx-text-alignment: center;
+    -fx-line-height: 1.1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-translate-y: 3;
+}
+.buttonLight:hover{
+    -fx-background-color: #262626;
+    -fx-border-color: black;
+    -fx-text-fill: white;
+}
+.buttonLight:armed{
+    -fx-translate-y: -4;
+    -fx-translate-y: 4;
+}
+.textDark{
+    -fx-background-color: #262626;
+    -fx-background-radius: 8px;
+    -fx-border-color: white;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+.textLight{
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: black;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+    -fx-text-fill: black;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}

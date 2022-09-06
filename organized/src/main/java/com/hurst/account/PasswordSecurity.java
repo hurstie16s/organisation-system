@@ -9,13 +9,23 @@ import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class PasswordSecurity {
+
+    private static final String PASSWORD_REQUIREMENTS = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{10,20}$";
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile(PASSWORD_REQUIREMENTS);
 
     private static final Logger logger = LogManager.getLogger(PasswordSecurity.class);
 
     public static String securePassword(String password) {
         return generateStrongPasswordHash(password);
+    }
+
+    public static boolean checkPasswordRequirements(String password, String passwordConfirm) {
+        Matcher matcher = PASSWORD_PATTERN.matcher(password);
+        return matcher.matches() && password.equals(passwordConfirm);
     }
 
     public static boolean validatePassword (String passwordToValidate, String storedSecurePassword) {

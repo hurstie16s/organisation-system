@@ -1,6 +1,6 @@
 DROP Table IF EXISTS organized.users;
 
-CREATE TABLE organised.users
+CREATE TABLE organized.users
 (
 	username VARCHAR(255),
     firstname VARCHAR(255),

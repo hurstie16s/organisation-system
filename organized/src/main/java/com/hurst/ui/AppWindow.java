@@ -85,7 +85,7 @@ public class AppWindow {
      * Sets up stage.
      */
     public void setUpStage() {
-        stage.setTitle("Swim Record System");
+        stage.setTitle("Organized");
         stage.setMinWidth(width);
         stage.setMinHeight(height + 20);
         stage.setOnCloseRequest(event -> App.getInstance().shutdown());

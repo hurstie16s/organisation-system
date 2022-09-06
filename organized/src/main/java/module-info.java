@@ -7,4 +7,5 @@ module com.hurst {
     opens com.hurst to javafx.base;
 
     exports com.hurst;
+    exports com.hurst.scene;
 }

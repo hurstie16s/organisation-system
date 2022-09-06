@@ -4,20 +4,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7f00ff0-cc3b-4758-b9dd-ecb8696378c0" name="Changes" comment="Created new javafx maven project">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/account/PasswordSecurity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/BaseScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MenuScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/sql/SqlCommandRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/testing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/ui/AppPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/ui/AppWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/style/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tests/com/hurst/account/PasswordSecurityTest.java" afterDir="false" />
+    <list default="true" id="a7f00ff0-cc3b-4758-b9dd-ecb8696378c0" name="Changes" comment="Added PasswordSecurity Class for secure storage of passwords.&#10;Added Logo image files.&#10;Successfully connected to database">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/account/PrimaryAccountFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/appData/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/style/darkTheme.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/style/lightTheme.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@102e1140" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@10700062" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@14240262" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1590e19b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@19e1ecb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1b2f0e12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1b6508f4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1c33aa2b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1f76bd2b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@22a978c6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@232087e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@245e7319" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@24a494d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@27de1d59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@282a34c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2d2d4c0e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2f83fd71" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@304ce4ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@30d46019" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@326e22da" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@32ac9142" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@37287465" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3863cae7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@38c23b3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3b9b1b51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3cc2fb92" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3e271ea2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3e8cd6b8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3ec2348f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@413e78ef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4405098c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@46f773c7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@499500ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4e71cf10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@53e55d53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@548b7ac2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@57401251" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@58afe6d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@596422e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@59d4650e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5ad5628c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5b9ab3d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@62013f76" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@65ba0c7e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@66723751" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@66c273b5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@69470725" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6a97993a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6ae71077" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6b7807db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6fe976ab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@7acdc12b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@905067e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@e65ec4f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@fc6540d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySql Scripts/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../MySql Scripts/createTables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c32e79ae-1f33-463b-be59-1b7929a9a5ab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c32e79ae-1f33-463b-be59-1b7929a9a5ab.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/account/PasswordSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/account/PasswordSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MenuScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/ui/AppWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/ui/AppWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logos/Organized-logos_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logos/Organized-logos_transparent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logos/Organized-logos_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logos/Organized-logos_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/com/hurst/account/PasswordSecurityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/com/hurst/account/PasswordSecurityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/account/PasswordSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/account/PasswordSecurity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/scene/MenuScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/scene/MenuScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/ui/AppWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/ui/AppWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logos/Organized-logos_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logos/Organized-logos_transparent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logos/Organized-logos_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logos/Organized-logos_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hurst/account/PasswordSecurityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hurst/account/PasswordSecurityTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +110,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EO1EuuUdtxmafp4fp9Jtbkgl9u" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -113,8 +187,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.testing" />
         <item itemvalue="JUnit.All in organized" />
+        <item itemvalue="Application.testing" />
       </list>
     </recent_temporary>
   </component>
@@ -126,7 +200,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662451709905</updated>
-      <workItem from="1662451711062" duration="6116000" />
+      <workItem from="1662451711062" duration="11151000" />
+      <workItem from="1662471843061" duration="20735000" />
     </task>
     <task id="LOCAL-00001" summary="Created new javafx maven project">
       <created>1662461210236</created>
@@ -135,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662461210236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added PasswordSecurity Class for secure storage of passwords.&#10;Added Logo image files.&#10;Successfully connected to database">
+      <created>1662466912025</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662466912025</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +235,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Created new javafx maven project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new javafx maven project" />
+    <MESSAGE value="Added PasswordSecurity Class for secure storage of passwords.&#10;Added Logo image files.&#10;Successfully connected to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added PasswordSecurity Class for secure storage of passwords.&#10;Added Logo image files.&#10;Successfully connected to database" />
   </component>
 </project>

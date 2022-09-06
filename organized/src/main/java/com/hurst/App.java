@@ -1,5 +1,6 @@
 package com.hurst;
 
+import com.hurst.scene.BaseScene;
 import com.hurst.sql.SqlCommandRunner;
 import com.hurst.ui.AppWindow;
 import javafx.application.Application;
@@ -10,14 +11,9 @@ import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.io.*;
 import java.sql.SQLException;
-import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Properties;
 
 /**
@@ -25,16 +21,16 @@ import java.util.Properties;
  */
 public class App extends Application {
 
-    private static int currentSeason;
-
     private static final Logger logger = LogManager.getLogger(App.class);
     private static App instance;
     private final Rectangle2D screenBounds = Screen.getPrimary().getBounds();
     private final int width = (int) screenBounds.getWidth() - 10;
     private final int height = (int) (screenBounds.getWidth() * 0.5);
     private Stage stage;
-
     private static Properties applicationProperties;
+    public static Properties themeProperties;
+
+    private static AppWindow appWindow;
 
     /**
      * The entry point of application.
@@ -74,10 +70,15 @@ public class App extends Application {
         String logoFile = App.class.getResource("/logos/Organized-logos.jpeg").toExternalForm();
         stage.getIcons().add(new Image(logoFile));
 
-        openApp();
-        SqlCommandRunner.setUrl("jdbc:mysql://localhost:3306/organized");
-        SqlCommandRunner.setUser("organized");
-        SqlCommandRunner.setPassword("organized1!");
+        applicationProperties = getProperties("/appData/config.properties");
+        if (Objects.equals(applicationProperties.getProperty("THEME"), "DARK")) {
+            themeProperties = getProperties("/style/darkTheme.properties");
+        } else {
+            themeProperties = getProperties("/style/lightTheme.properties");
+        }
+        SqlCommandRunner.setUrl(applicationProperties.getProperty("DatabaseURL"));
+        SqlCommandRunner.setUser(applicationProperties.getProperty("DatabaseUser"));
+        SqlCommandRunner.setPassword(applicationProperties.getProperty("DatabasePassword"));
         try {
             SqlCommandRunner.openSqlConnection();
         } catch (SQLException e) {
@@ -86,6 +87,8 @@ public class App extends Application {
             System.exit(2);
         }
         logger.info("Connection to Database Successful");
+
+        openApp();
     }
 
     /**
@@ -94,7 +97,7 @@ public class App extends Application {
     public void openApp() {
         logger.info("Opening App Window");
 
-        var appWindow = new AppWindow(stage, width, height);
+        appWindow = new AppWindow(stage, width, height);
 
         stage.show();
     }
@@ -108,49 +111,54 @@ public class App extends Application {
             SqlCommandRunner.closeSqlConnection();
         } catch (SQLException e) {
             logger.info("Database already closed");
+            System.exit(2);
         } catch (NullPointerException e) {
             logger.info("Database not yet initialised");
+            System.exit(6);
         }
         System.exit(0);
     }
 
-    public static int getCurrentSeason() {
-        return currentSeason;
-    }
 
-    private static void getProperties() {
-        applicationProperties = new Properties();
-        FileInputStream inputStream;
+    private static Properties getProperties(String fileURL) {
+        Properties properties = new Properties();
+        InputStreamReader inputStream;
         try {
-            //TODO: Fix error : Works in IDE, doesn't work in jar file : Issue with URI hierarchy
-            String filename = App.class.getResource("/appData/config.properties").toExternalForm();
-            if (filename == null) throw new NullPointerException();
-            File file = new File(new URI(filename));
-            inputStream = new FileInputStream(file);
-
-            applicationProperties.load(inputStream);
+            inputStream = new InputStreamReader(Objects.requireNonNull(App.class.getResourceAsStream(fileURL)));
+            properties.load(inputStream);
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(3);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            System.exit(5);
         } catch (NullPointerException e) {
             e.printStackTrace();
             System.exit(6);
         }
+        return properties;
     }
-    private static void setProperty(String key, String value) {
+    private static void setProperty(String fileUrl, String key, String value) {
         try {
+            InputStream URL = App.class.getResourceAsStream(fileUrl);
+            FileOutputStream outputStream = new FileOutputStream(Objects.requireNonNull(URL).toString());
+            //TODO: Issue Here
             applicationProperties.setProperty(key, value);
-            //applicationProperties.store(new FileOutputStream(
-            //        App.class.getResource("/appData/config.properties").toExternalForm()), null);
-            applicationProperties.store(
-                    new FileOutputStream("src/main/resources/appData/config.properties"), null);
+            applicationProperties.store(outputStream, null);
         } catch (IOException e) {
             logger.error(e.getMessage());
+            e.printStackTrace();
             System.exit(3);
         }
+    }
+
+    public static void toggleTheme(BaseScene scene) {
+        if (Objects.equals(applicationProperties.getProperty("THEME"), "DARK")) {
+            setProperty("/appData/config.properties", "THEME", "LIGHT");
+            themeProperties = getProperties("/style/lightTheme.properties");
+        } else {
+            setProperty("/appData/config.properties", "THEME", "DARK");
+            themeProperties = getProperties("/style/darkTheme.properties");
+        }
+        appWindow.loadScene(scene);
     }
 
     public static String getVersion() {

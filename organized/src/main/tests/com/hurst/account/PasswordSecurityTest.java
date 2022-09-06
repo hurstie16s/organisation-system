@@ -10,6 +10,8 @@ public class PasswordSecurityTest {
     private String securedPassword;
     private final String originalPassword = "Pa22w0rd1!";
 
+
+
     @Before
     public void setUp() {
         securedPassword = PasswordSecurity.securePassword(originalPassword);
@@ -23,5 +25,10 @@ public class PasswordSecurityTest {
     @Test
     public void validatePasswordToFail() {
         assertFalse(PasswordSecurity.validatePassword(originalPassword.toLowerCase(), securedPassword));
+    }
+
+    @Test
+    public void checkPasswordRequirementsTestToPass() {
+        assertTrue(PasswordSecurity.checkPasswordRequirements(originalPassword, originalPassword));
     }
 }
