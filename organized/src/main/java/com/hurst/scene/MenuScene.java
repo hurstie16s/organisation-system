@@ -5,11 +5,11 @@ import com.hurst.account.PasswordSecurity;
 import com.hurst.account.PrimaryAccountFunctions;
 import com.hurst.ui.AppPane;
 import com.hurst.ui.AppWindow;
+
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -18,18 +18,24 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+/**
+ * The type Menu scene.
+ */
 public class MenuScene extends BaseScene{
 
     private static final Logger logger = LogManager.getLogger(MenuScene.class);
 
     private BorderPane loginFields;
+
+    private VBox uiComponentsSignIn;
+
+    private VBox uiComponentsSignUp;
 
     private TextField usernameInputSignUp;
 
@@ -37,6 +43,11 @@ public class MenuScene extends BaseScene{
 
     private PasswordField passwordInputSignUpConfirm;
 
+    /**
+     * Instantiates a new Menu scene.
+     *
+     * @param appWindow the app window
+     */
     public MenuScene(AppWindow appWindow) {
         super(appWindow);
     }
@@ -94,7 +105,7 @@ public class MenuScene extends BaseScene{
         //TODO: Add Styling
 
         // Container for sign in ui
-        var uiComponentsSignIn = new VBox();
+        uiComponentsSignIn = new VBox();
 
         // Username input
         var usernameInput = new TextField();
@@ -115,6 +126,7 @@ public class MenuScene extends BaseScene{
                 Bindings.isEmpty(usernameInput.textProperty())
                         .or(Bindings.isEmpty(passwordInput.textProperty())));
         signInButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        signInButton.setOnAction(event -> signIn(usernameInput.getText(), passwordInput.getText()));
 
         var toggleButton = new Button("Sign Up Instead");
         toggleButton.setOnAction((ActionEvent event) -> toggleSignInSignUp(false));
@@ -132,7 +144,7 @@ public class MenuScene extends BaseScene{
         var uiComponentsSuper = new GridPane();
 
         // Container for sign in ui
-        var uiComponentsSignIn = new VBox();
+        uiComponentsSignUp = new VBox();
 
         // Firstname input
         var firstnameInput = new TextField();
@@ -183,20 +195,25 @@ public class MenuScene extends BaseScene{
                 Bindings.isEmpty(usernameInputSignUp.textProperty())
                         .or(Bindings.isEmpty(passwordInputSignUp.textProperty())));
         signUpButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        signUpButton.setOnAction(event -> signUp(usernameInputSignUp.getText(),
+                firstnameInput.getText(),
+                surnameInput.getText(),
+                passwordInputSignUp.getText(),
+                passwordInputSignUpConfirm.getText()));
 
         var toggleButton = new Button("Sign In Instead");
         toggleButton.setOnAction((ActionEvent event) -> toggleSignInSignUp(true));
         toggleButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
 
-        uiComponentsSignIn.getChildren().addAll(firstnameInput,
+        uiComponentsSignUp.getChildren().addAll(firstnameInput,
                 surnameInput,
                 usernameInputSignUp,
                 passwordInputSignUp,
                 passwordInputSignUpConfirm,
                 signUpButton,
                 toggleButton);
-        uiComponentsSignIn.setAlignment(Pos.CENTER);
-        uiComponentsSignIn.setSpacing(5);
+        uiComponentsSignUp.setAlignment(Pos.CENTER);
+        uiComponentsSignUp.setSpacing(5);
 
         // Password Requirements
         var passwordRequirements = new Label("""
@@ -209,7 +226,7 @@ public class MenuScene extends BaseScene{
         passwordRequirements.setAlignment(Pos.CENTER);
         passwordRequirements.setPadding(new Insets(5));
 
-        uiComponentsSuper.addRow(0, uiComponentsSignIn, passwordRequirements);
+        uiComponentsSuper.addRow(0, uiComponentsSignUp, passwordRequirements);
         uiComponentsSuper.setAlignment(Pos.CENTER);
         uiComponentsSuper.setVgap(5);
         uiComponentsSuper.setHgap(10);
@@ -226,7 +243,7 @@ public class MenuScene extends BaseScene{
         }
     }
     private void checkUsername(String usernameToCheck) {
-        if(!PrimaryAccountFunctions.checkUsername(usernameToCheck)) {
+        if(PrimaryAccountFunctions.checkUsername(usernameToCheck)) {
             usernameInputSignUp.getStyleClass().remove(App.themeProperties.getProperty("TextField1Rejected"));
             usernameInputSignUp.getStyleClass().add(App.themeProperties.getProperty("TextField1Accepted"));
         } else {
@@ -256,5 +273,52 @@ public class MenuScene extends BaseScene{
 
     private void toggleTheme(ActionEvent event) {
         App.toggleTheme(MenuScene.this);
+    }
+
+    private void signIn(String username, String securePassword) {
+        boolean signInAllowed = PrimaryAccountFunctions.signIn(username, securePassword);
+
+        if(signInAllowed) {
+            // Load MainAppScene
+            appWindow.loadScene(new MainAppScene(appWindow, username));
+        } else {
+            // Inform User that either password or username are incorrect
+            if(uiComponentsSignIn.getChildren().size()<5) {
+                Label signInRejectionLabel = new Label("Username or Password Incorrect");
+                signInRejectionLabel.getStyleClass().add("rejectedLabel");
+                uiComponentsSignIn.getChildren().add(signInRejectionLabel);
+            }
+        }
+    }
+
+    private void signUp(String username,
+                        String firstname,
+                        String surname,
+                        String password,
+                        String passwordConfirmation) {
+        int signUpAllowed = PrimaryAccountFunctions.signUp(firstname,
+                surname,
+                username,
+                password,
+                passwordConfirmation);
+        if(signUpAllowed == 0) {
+            appWindow.loadScene(new MainAppScene(appWindow, username));
+        } else if(signUpAllowed == 1) {
+            // Inform User that username is not available
+            Label usernameNotAvailableLabel = new Label("Username not Available");
+            usernameNotAvailableLabel.getStyleClass().add("rejectedLabel");
+            if (uiComponentsSignUp.getChildren().size()>=8) {
+                uiComponentsSignUp.getChildren().remove(7);
+            }
+            uiComponentsSignUp.getChildren().add(usernameNotAvailableLabel);
+        } else {
+            // Inform User that password does not meet requirements
+            Label passwordRequirementsNotMet = new Label("Password Requirements Not Met");
+            passwordRequirementsNotMet.getStyleClass().add("rejectedLabel");
+            if (uiComponentsSignUp.getChildren().size()>=8) {
+                uiComponentsSignUp.getChildren().remove(7);
+            }
+            uiComponentsSignUp.getChildren().add(passwordRequirementsNotMet);
+        }
     }
 }

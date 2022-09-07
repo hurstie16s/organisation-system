@@ -8,4 +8,5 @@ module com.hurst {
 
     exports com.hurst;
     exports com.hurst.scene;
+    exports com.hurst.ui;
 }

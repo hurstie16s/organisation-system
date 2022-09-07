@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hurst</groupId>
   <artifactId>organized</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.2-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
@@ -52,6 +52,10 @@
         <configuration>
           <mainClass>com.hurst/com.hurst.App</mainClass>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.1</version>
       </plugin>
     </plugins>
   </build>

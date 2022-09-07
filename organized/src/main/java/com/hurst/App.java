@@ -28,6 +28,9 @@ public class App extends Application {
     private final int height = (int) (screenBounds.getWidth() * 0.5);
     private Stage stage;
     private static Properties applicationProperties;
+    /**
+     * The constant themeProperties.
+     */
     public static Properties themeProperties;
 
     private static AppWindow appWindow;
@@ -143,6 +146,7 @@ public class App extends Application {
             //TODO: Issue Here
             applicationProperties.setProperty(key, value);
             applicationProperties.store(outputStream, null);
+            outputStream.close();
         } catch (IOException e) {
             logger.error(e.getMessage());
             e.printStackTrace();
@@ -150,6 +154,11 @@ public class App extends Application {
         }
     }
 
+    /**
+     * Toggle theme.
+     *
+     * @param scene the scene
+     */
     public static void toggleTheme(BaseScene scene) {
         if (Objects.equals(applicationProperties.getProperty("THEME"), "DARK")) {
             setProperty("/appData/config.properties", "THEME", "LIGHT");
@@ -161,6 +170,11 @@ public class App extends Application {
         appWindow.loadScene(scene);
     }
 
+    /**
+     * Gets version.
+     *
+     * @return the version
+     */
     public static String getVersion() {
         return applicationProperties.getProperty("VERSION");
     }

@@ -12,22 +12,57 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The type Password security.
+ * <p>
+ * Handles all methods responsible to Password Security. This includes:
+ * - Validating Passwords
+ * - Checking Password Requirements
+ * - Generating Strong Password Hashes
+ */
 public abstract class PasswordSecurity {
 
+    /**
+     * PASSWORD REQUIREMENTS
+     * The regex for the password requirements for an account
+     */
     private static final String PASSWORD_REQUIREMENTS = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{10,20}$";
+
     private static final Pattern PASSWORD_PATTERN = Pattern.compile(PASSWORD_REQUIREMENTS);
 
     private static final Logger logger = LogManager.getLogger(PasswordSecurity.class);
 
+    /**
+     * Secure password.
+     *
+     * @param password the password to be secured
+     * @return the secured password
+     *
+     * The public method that allows a user to secure a password
+     */
     public static String securePassword(String password) {
         return generateStrongPasswordHash(password);
     }
 
+    /**
+     * Check password requirements.
+     *
+     * @param password        the password
+     * @param passwordConfirm the password confirmation
+     * @return boolean representing if the given password meets the requirements
+     */
     public static boolean checkPasswordRequirements(String password, String passwordConfirm) {
         Matcher matcher = PASSWORD_PATTERN.matcher(password);
         return matcher.matches() && password.equals(passwordConfirm);
     }
 
+    /**
+     * Validate password boolean.
+     *
+     * @param passwordToValidate   the password to validate
+     * @param storedSecurePassword the stored secure password
+     * @return the boolean
+     */
     public static boolean validatePassword (String passwordToValidate, String storedSecurePassword) {
 
         String[] parts = storedSecurePassword.split(":");

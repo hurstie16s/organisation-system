@@ -71,6 +71,12 @@ public abstract class BaseScene {
         return this.scene;
     }
 
+    /**
+     * Root set up stack pane.
+     *
+     * @param cssURL the css url
+     * @return the stack pane
+     */
     public StackPane rootSetUp(String cssURL) {
 
         var pane = new StackPane();
