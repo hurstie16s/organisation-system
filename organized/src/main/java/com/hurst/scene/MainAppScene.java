@@ -17,6 +17,8 @@ import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Objects;
+
 /**
  * The type Main app scene.
  */
@@ -57,14 +59,16 @@ public class MainAppScene extends BaseScene{
         // Left Side Bar
         var mainAppLeftBar = new VBox();
         mainAppLeftBar.getStyleClass().add(App.themeProperties.getProperty("MainAppSideBar"));
-        mainAppLeftBar.setMinWidth(appWindow.getWidth() / 5);
-        mainAppLeftBar.setMaxWidth(appWindow.getWidth() / 5);
+        mainAppLeftBar.setMinWidth(appWindow.getWidth() / 5.0);
+        mainAppLeftBar.setMaxWidth(appWindow.getWidth() / 5.0);
 
         Image titleImage = new Image(
-                MainAppScene.class.getResource(App.themeProperties.getProperty("MenuTitleImage")).toExternalForm());
+                Objects.requireNonNull(
+                        MainAppScene.class.getResource(
+                                App.themeProperties.getProperty("MenuTitleImage"))).toExternalForm());
         ImageView title = new ImageView(titleImage);
         title.setPreserveRatio(true);
-        title.setFitWidth(appWindow.getWidth() / 6);
+        title.setFitWidth(appWindow.getWidth() / 6.0);
         title.setTranslateX(10);
         title.setTranslateY(10);
 
@@ -75,13 +79,10 @@ public class MainAppScene extends BaseScene{
         -Holds events
         -End date for Tasks
          */
-        var calenderButton = new Button("Calender");
-        calenderButton.getStyleClass().add("calenderButton");
-        calenderButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        calenderButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        calenderButton.setAlignment(Pos.CENTER_LEFT);
-        calenderButton.setPadding(new Insets(10, 0, 10,0));
-        calenderButton.setTranslateY(30);
+        var calenderButton = generateBasicButton("Calender",
+                "calenderButton",
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
 
         mainAppLeftBar.getChildren().add(calenderButton);
 
@@ -89,13 +90,10 @@ public class MainAppScene extends BaseScene{
         Events:
         -Different option to view events
          */
-        var eventsButton = new Button("Events");
-        eventsButton.getStyleClass().add("eventsButton");
-        eventsButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        eventsButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        eventsButton.setAlignment(Pos.CENTER_LEFT);
-        eventsButton.setPadding(new Insets(10, 0, 10,0));
-        eventsButton.setTranslateY(30);
+        var eventsButton = generateBasicButton("Events",
+                "eventsButton",
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
 
         mainAppLeftBar.getChildren().add(eventsButton);
 
@@ -103,13 +101,10 @@ public class MainAppScene extends BaseScene{
         Tasks:
         -To do tasks
          */
-        var tasksButton = new Button("Tasks");
-        tasksButton.getStyleClass().add("tasksButton");
-        tasksButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        tasksButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        tasksButton.setAlignment(Pos.CENTER_LEFT);
-        tasksButton.setPadding(new Insets(10, 0, 10,0));
-        tasksButton.setTranslateY(30);
+        var tasksButton = generateBasicButton("Tasks",
+                "tasksButton",
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
 
         mainAppLeftBar.getChildren().add(tasksButton);
 
@@ -118,61 +113,52 @@ public class MainAppScene extends BaseScene{
         -Have tasks within them
         Multi Part
          */
-        var projectsButton = new Button("Projects");
-        projectsButton.getStyleClass().add("projectsButton");
-        projectsButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        projectsButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        projectsButton.setAlignment(Pos.CENTER_LEFT);
-        projectsButton.setPadding(new Insets(10, 0, 10,0));
-        projectsButton.setTranslateY(30);
+        var projectsButton = generateBasicButton("Projects",
+                "projectsButton",
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
 
         mainAppLeftBar.getChildren().add(projectsButton);
 
         // Toggle Light and Dark Theme
-        var toggleThemeButton = new Button(App.themeProperties.getProperty("ToggleButtonText"));
-        toggleThemeButton.getStyleClass().add(App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"));
+        var toggleThemeButton = generateBasicButton(App.themeProperties.getProperty("ToggleButtonText"),
+                App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"),
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
         toggleThemeButton.setOnAction(this::toggleTheme);
-        toggleThemeButton.setAlignment(Pos.CENTER_LEFT);
-        toggleThemeButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        toggleThemeButton.setMaxHeight(mainAppLeftBar.getMaxHeight());
-        toggleThemeButton.setPadding(new Insets(10, 0, 10,0));
-        toggleThemeButton.setTranslateY(30);
 
         mainAppLeftBar.getChildren().add(toggleThemeButton);
 
         // Sign Out
-        var signOutButton = new Button("Sign Out");
-        signOutButton.getStyleClass().add(App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"));
-        signOutButton.setAlignment(Pos.CENTER_LEFT);
-        signOutButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        signOutButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        signOutButton.setPadding(new Insets(10, 0, 10,0));
-        signOutButton.setTranslateY(30);
+        var signOutButton = generateBasicButton("Sign Out",
+                App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"),
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
+        signOutButton.setOnAction(this::signOut);
 
         mainAppLeftBar.getChildren().add(signOutButton);
 
         // Lock Account
-        var lockAccountButton = new Button("Lock Account");
-        lockAccountButton.getStyleClass().add(App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"));
-        lockAccountButton.setAlignment(Pos.CENTER_LEFT);
-        lockAccountButton.setMinWidth(mainAppLeftBar.getMinWidth());
-        lockAccountButton.setMaxWidth(mainAppLeftBar.getMaxWidth());
-        lockAccountButton.setPadding(new Insets(10, 0, 10,0));
-        lockAccountButton.setTranslateY(30);
+        var lockAccountButton = generateBasicButton("Lock Account",
+                App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"),
+                mainAppLeftBar.getMinWidth(),
+                mainAppLeftBar.getMaxWidth());
+        lockAccountButton.setOnAction(this::lockAccount);
 
         mainAppLeftBar.getChildren().add(lockAccountButton);
 
         // Account Settings
         var accountSettingsButton = new Button();
         var settingsIcon = new ImageView(
-                MainAppScene.class.getResource(
-                        App.themeProperties.getProperty("SettingsIcon")).toExternalForm());
+                Objects.requireNonNull(MainAppScene.class.getResource(
+                        App.themeProperties.getProperty("SettingsIcon"))).toExternalForm());
         settingsIcon.setPreserveRatio(true);
         var settingsLabel = new Label("Account Settings");
         settingsLabel.getStyleClass().add(App.themeProperties.getProperty("AccountSettingsButtonLabel"));
         settingsLabel.setAlignment(Pos.CENTER_LEFT);
 
         var accountSettingsButtonGraphic = new HBox(settingsIcon, settingsLabel);
+        accountSettingsButtonGraphic.setAlignment(Pos.CENTER_LEFT);
 
         accountSettingsButton.setGraphic(accountSettingsButtonGraphic);
         accountSettingsButton.getStyleClass().add(App.themeProperties.getProperty("MainAppSideBarButtonThemeToggle"));
@@ -187,7 +173,23 @@ public class MainAppScene extends BaseScene{
         mainPane.setLeft(mainAppLeftBar);
     }
 
-    private void toggleTheme(ActionEvent event) {
-        App.toggleTheme(MainAppScene.this);
+    private Button generateBasicButton(String text, String style, double minWidth, double maxWidth) {
+        var button = new Button(text);
+        button.getStyleClass().add(style);
+        button.setAlignment(Pos.CENTER_LEFT);
+        button.setMinWidth(minWidth);
+        button.setMaxWidth(maxWidth);
+        button.setPadding(new Insets(10, 0, 10,5));
+        button.setTranslateY(30);
+
+        return button;
+    }
+
+    private void signOut(ActionEvent event) {
+        appWindow.loadScene(new MenuScene(appWindow));
+    }
+
+    private void lockAccount(ActionEvent event){
+        appWindow.loadScene(new LockScene(appWindow, username));
     }
 }

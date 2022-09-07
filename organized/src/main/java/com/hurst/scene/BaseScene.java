@@ -3,6 +3,7 @@ package com.hurst.scene;
 import com.hurst.App;
 import com.hurst.ui.AppPane;
 import com.hurst.ui.AppWindow;
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -84,5 +85,9 @@ public abstract class BaseScene {
         pane.setMaxHeight(appWindow.getHeight());
         pane.getStyleClass().add(cssURL);
         return pane;
+    }
+
+    protected void toggleTheme(ActionEvent event) {
+        App.toggleTheme(BaseScene.this);
     }
 }

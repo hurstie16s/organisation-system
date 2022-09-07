@@ -271,10 +271,6 @@ public class MenuScene extends BaseScene{
         }
     }
 
-    private void toggleTheme(ActionEvent event) {
-        App.toggleTheme(MenuScene.this);
-    }
-
     private void signIn(String username, String securePassword) {
         boolean signInAllowed = PrimaryAccountFunctions.signIn(username, securePassword);
 

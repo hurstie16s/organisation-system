@@ -4,173 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7f00ff0-cc3b-4758-b9dd-ecb8696378c0" name="Changes" comment="Added config.properties file along with lightTheme.properties and darkTheme.properties files. This allows for permanent configuration of the app and different light and dark themes to the app.&#10;Finished UI for menu scene for now, alterations may come as the app progresses.">
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/LockScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MainAppScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logos/settingsIconBlack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logos/settingsIconWhite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@183cd91b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@184fe450" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@196d2d44" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@211c3e1e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@234e6042" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@236d2e4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@239de3dc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2442ab00" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2556cf66" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@256b41fa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@256dabc8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2715e058" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@276c7b2d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@27fa06e8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2a8719ff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@330b8553" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@34527755" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@347c7fec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@34aaaf1d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@35859acb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@374ef9dc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@411be43c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@435fc47f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4461b501" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4482b1e2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@472c211c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@473e9e33" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4931aed0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@495fb661" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5153e607" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@519d2cbb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5462b73f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@552dfdf1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@559d278f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5769c352" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@57e057d3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@57e9d04c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5824a965" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5845e6a4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@58f5a7f1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5943afb7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5ca6750e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6195b22d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@627d1c5a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@62dc530e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@636c5239" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@63c9ac1e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@63d7987d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@640fb153" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@665b360d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@66be01b5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6733fd0c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@67c467e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@684c161b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@710bdadc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@71d6716f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@728f4885" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@730f711b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@762a5fb4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@767da452" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@76caac14" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@786bfbbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@78bbd517" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@790b1fa1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@798f0ce9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@79f06381" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@7a6b940e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@7dbae827" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@93ba134" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@98bee79" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@99e18d6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c32e79ae-1f33-463b-be59-1b7929a9a5ab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c32e79ae-1f33-463b-be59-1b7929a9a5ab.xml" afterDir="false" />
+    <list default="true" id="a7f00ff0-cc3b-4758-b9dd-ecb8696378c0" name="Changes" comment="Added sign in and sign up functionality to the application.&#10;Started building a basic UI for the MainAppScene.">
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1b213fd1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1fcc3c0b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@24ec53bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3092262f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5e74ca27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6e44d9ac" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/SystemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/SystemInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/account/PasswordSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/account/PasswordSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/account/PrimaryAccountFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/account/PrimaryAccountFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/scene/BaseScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/BaseScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/scene/LockScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/LockScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MainAppScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MainAppScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/scene/MenuScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/sql/SqlCommandRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/sql/SqlCommandRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hurst/testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hurst/testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style/darkTheme.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/darkTheme.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style/lightTheme.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/lightTheme.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@102e1140" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@102e1140" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@10700062" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@160c03ae" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@14240262" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@126d23bd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1590e19b" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@129a3ec0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@19e1ecb" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1959fa4c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1b2f0e12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1b6508f4" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@130f8fac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1c33aa2b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@1f76bd2b" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@229321cb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@22a978c6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@232087e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@245e7319" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@24a494d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@27de1d59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@282a34c9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2d2d4c0e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@2f83fd71" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@304ce4ae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@30d46019" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@326e22da" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@32ac9142" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@37287465" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3863cae7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@38c23b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3b9b1b51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3cc2fb92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3e271ea2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3e8cd6b8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@3ec2348f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@413e78ef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4405098c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@46f773c7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@499500ce" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@4e71cf10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@53e55d53" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@548b7ac2" beforeDir="false" afterPath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@548b7ac2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@57401251" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@58afe6d6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@596422e3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@59d4650e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5ad5628c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@5b9ab3d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@62013f76" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@65ba0c7e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@66723751" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@66c273b5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@69470725" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6a97993a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6ae71077" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6b7807db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@6fe976ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@7acdc12b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@905067e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@e65ec4f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sun.nio.ch.ChannelInputStream@fc6540d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/SystemInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/SystemInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/account/PasswordSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/account/PasswordSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/account/PrimaryAccountFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/account/PrimaryAccountFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/appData/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/appData/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/appData/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/appData/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/scene/BaseScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/scene/BaseScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/scene/LockScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/scene/LockScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/scene/MainAppScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/scene/MainAppScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/scene/MenuScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/scene/MenuScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/sql/SqlCommandRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/sql/SqlCommandRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hurst/testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hurst/testing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style/darkTheme.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/darkTheme.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style/lightTheme.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/lightTheme.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/organized-1.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-organized-1.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hurst/account/PasswordSecurityTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/organized-1.2-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +143,7 @@
       <workItem from="1662451711062" duration="11151000" />
       <workItem from="1662471843061" duration="21290000" />
       <workItem from="1662537963119" duration="182000" />
-      <workItem from="1662538153184" duration="17009000" />
+      <workItem from="1662538153184" duration="22196000" />
     </task>
     <task id="LOCAL-00001" summary="Created new javafx maven project">
       <created>1662461210236</created>
@@ -308,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662500130162</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added sign in and sign up functionality to the application.&#10;Started building a basic UI for the MainAppScene.">
+      <created>1662562711594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662562711594</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +195,7 @@
     <MESSAGE value="Created new javafx maven project" />
     <MESSAGE value="Added PasswordSecurity Class for secure storage of passwords.&#10;Added Logo image files.&#10;Successfully connected to database" />
     <MESSAGE value="Added config.properties file along with lightTheme.properties and darkTheme.properties files. This allows for permanent configuration of the app and different light and dark themes to the app.&#10;Finished UI for menu scene for now, alterations may come as the app progresses." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added config.properties file along with lightTheme.properties and darkTheme.properties files. This allows for permanent configuration of the app and different light and dark themes to the app.&#10;Finished UI for menu scene for now, alterations may come as the app progresses." />
+    <MESSAGE value="Added sign in and sign up functionality to the application.&#10;Started building a basic UI for the MainAppScene." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sign in and sign up functionality to the application.&#10;Started building a basic UI for the MainAppScene." />
   </component>
 </project>
