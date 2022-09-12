@@ -1,6 +1,0 @@
-#Wed Sep 07 13:33:27 BST 2022
-DatabasePassword=organized1\!
-DatabaseURL=jdbc\:mysql\://localhost\:3306/organized
-DatabaseUser=organized
-THEME=LIGHT
-VERSION=1.0-SNAPSHOT

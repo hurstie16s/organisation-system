@@ -90,7 +90,10 @@ public class PrimaryAccountFunctions {
 
         // Add user to database
         // SQL
-        String sqlSignUp = "INSERT INTO users (username, firstname, surname, securePassword) VALUES (?,?,?,?)";
+        String sqlSignUp = "INSERT INTO " +
+                "users " +
+                "(username, firstname, surname, securePassword, workingHours, workingDays) " +
+                "VALUES (?,?,?,?, 24, 7)";
         try {
             PreparedStatement statementSignUp = SqlCommandRunner.databaseConnection.prepareStatement(sqlSignUp);
             // Insert values for INSERT statement
@@ -106,6 +109,35 @@ public class PrimaryAccountFunctions {
         }
 
         return 0;
+    }
+
+    public static void setWorkingHoursDays(String username, int workDays, int workHours) {
+        String sql = "UPDATE users SET workingHours = ?, workingDays = ? WHERE username = ?";
+        try {
+            PreparedStatement statement = SqlCommandRunner.databaseConnection.prepareStatement(sql);
+            statement.setInt(1, workHours);
+            statement.setInt(2, workDays);
+            statement.setString(3, username);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            System.exit(2);
+        }
+    }
+
+    public static int[] getWorkingDaysHours(String username) {
+        String sql = "SELECT workingHours, workingDays FROM users WHERE username = ?";
+        try {
+            PreparedStatement statement = SqlCommandRunner.databaseConnection.prepareStatement(sql);
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return new int[]{resultSet.getInt(0), resultSet.getInt(1)};
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            System.exit(2);
+        }
+        return new int[0];
     }
 
 }

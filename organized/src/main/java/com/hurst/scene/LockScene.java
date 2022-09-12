@@ -6,6 +6,7 @@ import com.hurst.ui.AppPane;
 import com.hurst.ui.AppWindow;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -66,6 +67,7 @@ public class LockScene extends BaseScene{
         toggleThemeButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
         toggleThemeButton.setOnAction(this::toggleTheme);
         toggleThemeButton.setAlignment(Pos.TOP_RIGHT);
+        toggleThemeButton.setCursor(Cursor.OPEN_HAND);
 
         menuHeader.setLeft(title);
         menuHeader.setRight(toggleThemeButton);
@@ -86,6 +88,7 @@ public class LockScene extends BaseScene{
         signInButton.disableProperty().bind((Bindings.isEmpty(passwordInput.textProperty())));
         signInButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
         signInButton.setOnAction(event -> signIn(passwordInput.getText()));
+        signInButton.setCursor(Cursor.OPEN_HAND);
 
         uiComponentsUnlock.getChildren().addAll(passwordInput, signInButton);
         uiComponentsUnlock.setAlignment(Pos.CENTER);

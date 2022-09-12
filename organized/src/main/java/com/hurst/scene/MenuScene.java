@@ -10,6 +10,7 @@ import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -84,6 +85,7 @@ public class MenuScene extends BaseScene{
         toggleThemeButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
         toggleThemeButton.setOnAction(this::toggleTheme);
         toggleThemeButton.setAlignment(Pos.TOP_RIGHT);
+        toggleThemeButton.setCursor(Cursor.OPEN_HAND);
 
         menuHeader.setLeft(title);
         menuHeader.setRight(toggleThemeButton);
@@ -127,10 +129,12 @@ public class MenuScene extends BaseScene{
                         .or(Bindings.isEmpty(passwordInput.textProperty())));
         signInButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
         signInButton.setOnAction(event -> signIn(usernameInput.getText(), passwordInput.getText()));
+        signInButton.setCursor(Cursor.OPEN_HAND);
 
         var toggleButton = new Button("Sign Up Instead");
         toggleButton.setOnAction((ActionEvent event) -> toggleSignInSignUp(false));
         toggleButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        toggleButton.setCursor(Cursor.OPEN_HAND);
 
         uiComponentsSignIn.getChildren().addAll(usernameInput, passwordInput, signInButton, toggleButton);
         uiComponentsSignIn.setAlignment(Pos.CENTER);
@@ -200,10 +204,12 @@ public class MenuScene extends BaseScene{
                 surnameInput.getText(),
                 passwordInputSignUp.getText(),
                 passwordInputSignUpConfirm.getText()));
+        signUpButton.setCursor(Cursor.OPEN_HAND);
 
         var toggleButton = new Button("Sign In Instead");
         toggleButton.setOnAction((ActionEvent event) -> toggleSignInSignUp(true));
         toggleButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        toggleButton.setCursor(Cursor.OPEN_HAND);
 
         uiComponentsSignUp.getChildren().addAll(firstnameInput,
                 surnameInput,
@@ -298,7 +304,8 @@ public class MenuScene extends BaseScene{
                 password,
                 passwordConfirmation);
         if(signUpAllowed == 0) {
-            appWindow.loadScene(new MainAppScene(appWindow, username));
+            //appWindow.loadScene(new MainAppScene(appWindow, username));
+            appWindow.loadScene(new AccountSetUpScene(appWindow, username));
         } else if(signUpAllowed == 1) {
             // Inform User that username is not available
             Label usernameNotAvailableLabel = new Label("Username not Available");

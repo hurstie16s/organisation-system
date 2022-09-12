@@ -64,6 +64,16 @@
     -fx-text-inner-color: black;
     -fx-text-inner-size: 14px;
 }
+.labelDark {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+.labelLight {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
 .buttonDark{
     -fx-background-color: #262626;
     -fx-background-radius: 8px;
@@ -190,4 +200,21 @@
     -fx-text-fill: black;
     -fx-font-weight: bold;
     -fx-font-size: 20px;
+}
+.taskStandardStyle{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+}
+.taskStandardButtonStyle{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+}
+.taskStandardButtonStyle:hover{
+    -fx-border-color: white;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
 }

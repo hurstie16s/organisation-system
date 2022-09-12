@@ -1,22 +1,30 @@
 package com.hurst.scene;
 
 import com.hurst.App;
+import com.hurst.components.StatusOption;
+import com.hurst.components.Task;
+import com.hurst.sql.TaskManagement;
 import com.hurst.ui.AppPane;
 import com.hurst.ui.AppWindow;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.Cursor;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -26,7 +34,11 @@ public class MainAppScene extends BaseScene{
 
     private static final Logger logger = LogManager.getLogger(MainAppScene.class);
 
+    private BorderPane mainPane;
+
     private final String username;
+
+    private ArrayList<Task> tasks;
 
     /**
      * Instantiates a new Base scene.
@@ -53,7 +65,7 @@ public class MainAppScene extends BaseScene{
         var menuPane = rootSetUp(App.themeProperties.getProperty("AppBackground"));
         root.getChildren().add(menuPane);
 
-        var mainPane = new BorderPane();
+        mainPane = new BorderPane();
         menuPane.getChildren().add(mainPane);
 
         // Left Side Bar
@@ -105,6 +117,7 @@ public class MainAppScene extends BaseScene{
                 "tasksButton",
                 mainAppLeftBar.getMinWidth(),
                 mainAppLeftBar.getMaxWidth());
+        tasksButton.setOnAction(this::showTasks);
 
         mainAppLeftBar.getChildren().add(tasksButton);
 
@@ -149,6 +162,8 @@ public class MainAppScene extends BaseScene{
 
         // Account Settings
         var accountSettingsButton = new Button();
+        accountSettingsButton.setCursor(Cursor.OPEN_HAND);
+
         var settingsIcon = new ImageView(
                 Objects.requireNonNull(MainAppScene.class.getResource(
                         App.themeProperties.getProperty("SettingsIcon"))).toExternalForm());
@@ -181,8 +196,138 @@ public class MainAppScene extends BaseScene{
         button.setMaxWidth(maxWidth);
         button.setPadding(new Insets(10, 0, 10,5));
         button.setTranslateY(30);
+        button.setCursor(Cursor.OPEN_HAND);
 
         return button;
+    }
+
+    private void showTasks(ActionEvent event){
+        tasks = TaskManagement.getAllTasks(this.username);
+
+        var paneCenter = new VBox();
+        var scroller = new ScrollPane();
+        scroller.setContent(paneCenter);
+        scroller.setFitToWidth(true);
+        scroller.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        mainPane.setCenter(scroller);
+
+        for (Task task : tasks) {
+            paneCenter.getChildren().add(task.getTaskUIConcise());
+        }
+
+        // Add tasks
+        var addTaskButton = new Button("Add Task");
+        addTaskButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        addTaskButton.setAlignment(Pos.CENTER);
+        addTaskButton.setCursor(Cursor.OPEN_HAND);
+        addTaskButton.setOnAction(this::addTaskGUI);
+        paneCenter.getChildren().add(addTaskButton);
+    }
+
+    private void addTaskGUI(ActionEvent event) {
+
+        var addTaskUI = new GridPane();
+
+        var taskNameInput = new TextField();
+        taskNameInput.setPromptText("Task Name");
+        taskNameInput.getStyleClass().add(App.themeProperties.getProperty("TextField1"));
+        taskNameInput.setAlignment(Pos.CENTER);
+        taskNameInput.setMinWidth(200);
+        taskNameInput.setMaxWidth(300);
+        addTaskUI.add(taskNameInput, 0, 0);
+
+        var taskDescriptionInput = new TextArea();
+        taskDescriptionInput.setPromptText("Task Description");
+        taskDescriptionInput.getStyleClass().add(App.themeProperties.getProperty("TextField1"));
+        taskDescriptionInput.setCursor(Cursor.TEXT);
+        taskDescriptionInput.setMinWidth(300);
+        taskDescriptionInput.setMaxHeight(400);
+        taskDescriptionInput.setPrefRowCount(5);
+        addTaskUI.add(taskDescriptionInput, 0, 1);
+
+        LocalDate[] startDate = new LocalDate[1];
+        var startDatePicker = new DatePicker();
+        startDatePicker.setPromptText("Start Date");
+        startDatePicker.getStyleClass().add(App.themeProperties.getProperty("TextField1"));
+        startDatePicker.setOnAction(e -> {
+            startDate[0] = startDatePicker.getValue();
+        });
+        addTaskUI.add(startDatePicker, 0, 2);
+
+        var startTimeHour = new ChoiceBox<Integer>();
+        for (int i = 0; i < 24; i++) {
+            startTimeHour.getItems().add(i);
+        }
+        addTaskUI.add(startTimeHour, 1, 2);
+
+        LocalDate[] dueDate = new LocalDate[1];
+        var dueDatePicker = new DatePicker();
+        dueDatePicker.setPromptText("Start Date");
+        dueDatePicker.getStyleClass().add(App.themeProperties.getProperty("TextField1"));
+        dueDatePicker.setOnAction(e -> {
+            dueDate[0] = dueDatePicker.getValue();
+        });
+        addTaskUI.add(dueDatePicker, 0, 3);
+
+        var dueTimeHour = new ChoiceBox<Integer>();
+        for (int i = 0; i < 60; i++) {
+            dueTimeHour.getItems().add(i);
+        }
+        addTaskUI.add(dueTimeHour, 1, 3);
+
+        var estimatedCompletionTimeInput = new TextField();
+        estimatedCompletionTimeInput.setPromptText("Number of hours to complete");
+        estimatedCompletionTimeInput.getStyleClass().add(App.themeProperties.getProperty("TextField1"));
+        estimatedCompletionTimeInput.setAlignment(Pos.CENTER);
+        estimatedCompletionTimeInput.setMinWidth(150);
+        estimatedCompletionTimeInput.setMaxWidth(200);
+        addTaskUI.add(estimatedCompletionTimeInput, 0, 4);
+
+        var taskStatusInput = new ChoiceBox<String>();
+        taskStatusInput.getItems().addAll("Not Started",
+                "In Progress",
+                "Paused");
+        addTaskUI.add(taskStatusInput, 0, 5);
+
+        var addTaskButton = new Button("Add Task");
+        addTaskButton.getStyleClass().add(App.themeProperties.getProperty("Button1"));
+        addTaskButton.setAlignment(Pos.CENTER);
+        addTaskButton.setCursor(Cursor.OPEN_HAND);
+        addTaskButton.setOnAction(event1 -> addTask(taskNameInput.getText(),
+                taskDescriptionInput.getText(),
+                LocalDateTime.of(startDate[0], LocalTime.of(startTimeHour.getValue(), 0)),
+                LocalDateTime.of(dueDate[0], LocalTime.of(dueTimeHour.getValue(), 0)),
+                Integer.parseInt(estimatedCompletionTimeInput.getText()),
+                StatusOption.valueOf(taskStatusInput.getValue())));
+        addTaskUI.add(addTaskButton, 0, 6);
+
+        addTaskUI.setVgap(5);
+        addTaskUI.setHgap(5);
+    }
+
+    private void addTask(String taskName,
+                         String taskDescription,
+                         LocalDateTime startDateTime,
+                         LocalDateTime dueDateTime,
+                         Integer estimatedCompletionTime,
+                         StatusOption taskStatus) {
+        // Create Task Option
+        Task newTask = new Task(this.username,
+                taskName,
+                taskDescription,
+                startDateTime,
+                dueDateTime,
+                estimatedCompletionTime,
+                taskStatus);
+
+        // Add Task to Database
+        TaskManagement.addTask(newTask);
+
+        // Add Task to ArrayList : May be redundant
+        tasks.add(newTask);
+
+        // Reload Tasks UI
+        this.showTasks(null);
     }
 
     private void signOut(ActionEvent event) {
